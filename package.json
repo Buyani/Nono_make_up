@@ -1,0 +1,16 @@
+{
+  "name": "nono_makeup",
+  "version": "1.0.0",
+  "description": "make up booking app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "Mongo",
+    "Express"
+  ],
+  "author": "buyani mhlongo",
+  "license": "ISC"
+}
