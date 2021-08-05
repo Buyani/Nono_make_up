@@ -5,7 +5,7 @@
 2. pay for booking/confirm booking
 3. view my bookings
 4. log in
-# Pending Use Cases(Admin)(to be intergrated)
+### Pending Use Cases(Admin)(to be intergrated)
 1. view bookings
 2. accept booking
 3. delete booking
@@ -13,7 +13,7 @@
 
 Nono-makeup project is a simple web app project for makeup artist to mamange makeup booking
 
-#  Libraries
+###  Libraries
 
   1. "axios": "^0.21.1",
   2. "body-parser": "^1.19.0",
