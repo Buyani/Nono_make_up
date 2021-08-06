@@ -9,18 +9,17 @@ exports.create_slot = (req,res)=>{
         return;
     }
 
-    // new user
+    // new slot
     const slot = new Slotdb({
         date:req.body.date,
         start_time:req.body.start_time,
         end_time:req.body.end_time
     })
 
-    // save user in the database
+    // save slot in the database
     slot
         .save(slot)
         .then(data => {
-            //res.send(data)
             res.redirect('/');
         })
         .catch(err =>{
@@ -54,4 +53,52 @@ exports.find_slot=(req,res)=>{
         .catch(err=>{ res.status(500).send( {message:err.message || "Error Occurred while retriving user information"}); });
     }
 
+}
+
+exports.update_slot=(req,res)=>
+{
+    if(!req.body)
+    {
+        return res.status(400).send({message:"Update data can not be empty"});
+    }
+    else{
+
+        const id=req.params.id;
+        Slotdb.findByIdAndUpdate(id,rq.body,{useFindAndModify:false})
+        .then(results=>
+            {
+                if(!results){
+                    res.status(404).send({ message : `Cannot Update slot with ${id}. Maybe slot not found!`});
+                }
+                else
+                {
+                    res.send(results);
+                }
+            })
+        .catch(err=>
+            {
+                res.status(500).send({ message : "Error Update slot information"})
+            });
+
+    }
+}
+
+exports.delete_slot=(req,res)=>
+{
+    const id=req.query.id;
+
+    Slotdb.query.findByIdAndDelete(id)
+    .then(results=> {
+            if(!results) {
+                res.status(400).send({message:`Cannot delete with id ${id}. please cheack if id is correct`});
+            }
+            else{
+                res.send({message:"slot was sucessfully deleted."
+            });
+        }
+    })
+    .catch(err=>{
+            res.status(500).send({message:"Could not delete slot with id=" + id
+        });
+    });
 }
