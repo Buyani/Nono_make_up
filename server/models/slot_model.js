@@ -2,24 +2,24 @@ const mongoose =require("mongoose");
 
 const SlotSchema=new mongoose.Schema({
     _id:Schema.Types.ObjectId,
-    Date:
+    date:
     {
         type:new Date,
         required:true
     },
-    Start_Time:
+    start_time:
     {
         type:new Date,
         require:true
     },
-    End_Time:
+    end_time:
     {
         type:new Date().setTime,
         require:true
     },
-    {
-        timestamps:true
-    }
+
+    timestamps:true
+
 
 })
 
