@@ -1,7 +1,7 @@
 const axios=require("axios");
 
 exports.slot_home=(req,res)=>{
-    res.status(200).send({data:"slot home from service"});
+   res.render('index')
 }
 
 exports.create_slot = (req, res) =>{
