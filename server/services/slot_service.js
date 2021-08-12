@@ -10,7 +10,6 @@ exports.slot_home=(req,res)=>{
     })
 }
 
-
 exports.add_slot = (req, res) =>{
     res.render('add_slot');
 }

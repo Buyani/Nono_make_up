@@ -12,7 +12,6 @@ route.get("/update_slot",service.update_slot)
 
 route.get("/delete_slot",service.delete_slot)
 
-
 //API
 route.get('/api/slots',controller.find_slot);
 route.post('/api/slots',controller.add_slot);
