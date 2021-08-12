@@ -1,0 +1,31 @@
+<div class="col-md-6">
+    <!-- general form elements -->
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">new slot</h3>
+      </div>
+      <!-- /.card-header -->
+      <!-- form start -->
+      <form action="/api/slots" method="POST" id="add_slot">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="exampleInputEmail1">date</label>
+            <input  class="form-control" name="date" placeholder="date">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">start time</label>
+            <input  class="form-control" name="start_time" placeholder="start time">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">end time</label>
+            <input class="form-control" name="end_time" placeholder="end time">
+          </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.card -->
+  </div>

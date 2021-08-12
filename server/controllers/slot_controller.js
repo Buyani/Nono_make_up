@@ -2,7 +2,7 @@ var Slotdb=require('../models/slot_model');
 
 
 // create and save new user
-exports.create_slot = (req,res)=>{
+exports.add_slot = (req,res)=>{
     // validate request
     if(!req.body){
         res.status(400).send({ message : "Content can not be emtpy!"});
@@ -20,7 +20,7 @@ exports.create_slot = (req,res)=>{
     slot
         .save(slot)
         .then(data => {
-            res.redirect('/');
+            res.redirect('/slots');
         })
         .catch(err =>{
             res.status(500).send({

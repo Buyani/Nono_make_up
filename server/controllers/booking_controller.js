@@ -2,7 +2,7 @@ var Bookingdb=require('../models/booking_model');
 
 
 // create and save new user
-exports.create_booking = (req,res)=>{
+exports.add_booking = (req,res)=>{
     // validate request
     if(!req.body){
         res.status(400).send({ message : "Content can not be emtpy!"});
@@ -10,7 +10,7 @@ exports.create_booking = (req,res)=>{
     }
 
     // new slot
-    const slot = new Bookingdb({
+    const booking = new Bookingdb({
         slot_id:req.body.slot_id,
         name:req.body.name,
         email:req.body.email,
@@ -21,9 +21,9 @@ exports.create_booking = (req,res)=>{
 
     // save slot in the database
     slot
-        .save(slot)
+        .save(booking)
         .then(data => {
-            res.redirect('/');
+            res.redirect('/bookings');
         })
         .catch(err =>{
             res.status(500).send({

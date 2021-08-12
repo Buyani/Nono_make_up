@@ -1,11 +1,18 @@
 const axios=require("axios");
 
 exports.slot_home=(req,res)=>{
-   res.render('index')
+    axios.get('http://localhost:3000/api/slots')
+    .then(function(response){
+        res.render('slots', { slots : response.data });
+    })
+    .catch(err =>{
+        res.send(err);
+    })
 }
 
-exports.create_slot = (req, res) =>{
-    res.status(200).send({data:"slot create from service"});
+
+exports.add_slot = (req, res) =>{
+    res.render('add_slot');
 }
 
 exports.update_slot = (req, res) =>{
