@@ -24,7 +24,7 @@ app.use(bodyperser.urlencoded({extended:true}));
 //load assets
 
 //load router
-
-
+app.use('/',require("./server/routes/slot_route"));
+app.use('/',require("./server/routes/booking_route"));
 
 app.listen(PORT,()=>{console.log('Server running on:http://localhost:{PORT}')})

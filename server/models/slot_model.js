@@ -1,25 +1,31 @@
 const mongoose =require("mongoose");
+const { Schema } = mongoose;
 
-const SlotSchema=new mongoose.Schema({
-    _id:Schema.Types.ObjectId,
+const SlotSchema=new Schema({
+    _id:{
+        type: Schema.Types.ObjectId,
+        index: true,
+        required: true,
+        auto: true,
+    },
     date:
     {
-        type:new Date,
+        type: Date,
+        default: Date.now,
         required:true
     },
     start_time:
     {
-        type:new Date,
+        type: Date,
+        default: Date.now,
         require:true
     },
     end_time:
     {
-        type:new Date().setTime,
+        type: Date,
+        default: Date.now,
         require:true
     },
-
-    timestamps:true
-
 
 })
 
