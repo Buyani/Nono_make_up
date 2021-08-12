@@ -33,6 +33,7 @@ exports.create_slot = (req,res)=>{
 exports.find_slot=(req,res)=>{
 
     if(req.query.id)
+
     {
         const id=req.query.id
 
