@@ -1,7 +1,9 @@
 const axios=require("axios");
+baseUrl = process.env.baseURL || "http://localhost";
+const PORT= process.env.PORT || 3000;
 
 exports.slot_home=(req,res)=>{
-    axios.get('http://localhost:3000/api/slots')
+    axios.get(baseUrl+':'+PORT+'/api/bookings')
     .then(function(response){
         res.render('slots', { slots : response.data });
     })
